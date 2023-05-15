@@ -1,0 +1,191 @@
+\documentclass[t,xcolor={dvipsnames}]{beamer} % handout
+\usepackage{talk_style}
+\usepackage{verbatim}
+\usepackage{listings}
+
+\usepackage{courier}
+\usepackage{subfigure}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{multirow}
+
+\usepackage{multicol}
+\usepackage{setspace}
+\setbeamersize{text margin left=10pt,text margin right=10pt}
+\usetikzlibrary{arrows.meta,
+                chains,
+                positioning,
+                shapes.geometric
+                }
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\definecolor{myred}{HTML}{A30000}
+\definecolor{myblue}{HTML}{5EA5C5}
+
+
+
+
+% ================================================================================
+
+\author[Thomas, A. \& Balajewicz, M.] {}
+\date
+  {May 12, 2023}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \begin{figure}[H]
+    \includegraphics[width=\textwidth, height=0.95\textheight]{data/dream_designe_title.png}
+  \end{figure}
+\end{frame}
+
+% ===================================================================================================
+\section{Summary}
+% ===================================================================================================
+
+\addtocounter{framenumber}{-1}
+
+% ---------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{\insertsection}
+\textbf{We envision a suite of realtor.com ``dream'' AI products:}
+\vspace{0.2cm}
+
+\begin{itemize}
+  \item<2->{\color{myred}Dream Home}
+    \begin{itemize}
+      \item<3->[$\hookrightarrow$] Create the house of your dreams
+      \item<4->[$\hookrightarrow$] We'll help find it for reals
+    \end{itemize}
+  \item<5->{\color{myred}Dream Designer}
+    \begin{itemize}
+      \item<6->[$\hookrightarrow$] Redesign the house of your dreams
+      \item<7->[$\hookrightarrow$] We'll help find it for reals
+    \end{itemize}
+  \item<8->{\color{myred}Dream $\ldots$}
+    \begin{itemize}
+      \item<9->[$\hookrightarrow$] $\ldots$ of your dreams
+      \item<10->[$\hookrightarrow$] We'll help find it for reals
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+% ---------------------------------------------------------------------------------------------------
+
+% ===================================================================================================
+\section{Dream Designer}
+% ===================================================================================================
+
+% ---------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{\insertsection}
+  \textbf{Demo:} \url{https://github.com/Opcity/ml/tree/anjali/hackathon_home_designer/projects/dream_designer}
+\vspace{0.2cm}
+
+  \begin{figure}[H]
+    \hyperlink{https://github.com/Opcity/ml/blob/anjali/hackathon_home_designer/projects/dream_designer/assets/Dream_designer_demo_recording.mp4}{\includegraphics[width=0.85\textwidth]{data/demo_page.png}}
+  \end{figure}
+
+\end{frame}
+% ---------------------------------------------------------------------------------------------------
+
+% ===================================================================================================
+\section{Dream Designer}
+% ===================================================================================================
+
+% ---------------------------------------------------------------------------------------------------
+\begin{frame}
+
+\frametitle{\insertsection}
+  \textbf{Use AI to redesign rooms and remodel home exteriors:}
+\vspace{0.2cm}
+
+\begin{itemize}
+  \item<1-> Several services currently available:
+    \begin{itemize}
+      \item<2->\url{https://www.roomsGPT.io}
+      \item<2->\url{https://interiorai.com}
+    \end{itemize}
+
+    \item<3-> Offer experience on LDP
+      \begin{itemize}
+        \item<4->[$\hookrightarrow$] Similar to ``Virtual Tour'' option today
+      \end{itemize}
+
+    \item<5-> Offer experience on ``My Home''
+      \only<6->{
+        \begin{figure}[H]
+          \includegraphics[width=0.35\textwidth]{data/my_home.png}
+        \end{figure}
+      }
+
+  \end{itemize}
+      %\uncover<5->{-- As a registered homeowner:}
+      %\begin{itemize}
+      %  \item<6->[\checkmark] Get real-time home value reports
+      %  \item<6->[\checkmark] Compare your home to others in your area
+      %  \item<6->[\checkmark] Keep your home’s details up-to-date
+      %  \item<6->[\checkmark] Explore different ways to sell
+      %  \item<7->[\checkmark] {\color{myred}\textbf{Have fun remodeling your home using AI}}
+      %\end{itemize}
+
+\end{frame}
+% ---------------------------------------------------------------------------------------------------
+
+% ===================================================================================================
+\section{Dream Designer}
+% ===================================================================================================
+
+% ---------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{\insertsection}
+  \textbf{Limitations and future work:}
+\vspace{0.2cm}
+
+  \begin{itemize}
+    \item<2-> All images are cached; we are not querying the API's in real time
+    \item<2-> We are primarily interested in the \ul{user experience}, not
+      implementation or productionalization details
+    \item<3-> Some technical issues on the horizon:
+      \begin{itemize}
+        \item<4->[$\rightarrow$] Would need to evaluate costs; both in terms of
+          dollars and time
+        \item<5->[$\rightarrow$] The AI models are perfect, sometimes they get
+          confused:
+      \end{itemize}
+
+  \end{itemize}
+
+\visible<6->{
+\begin{figure}
+  \subfigure[Original]{\includegraphics[width=0.3\textwidth]{data/home_original.png}}
+  \subfigure[AI render]{\includegraphics[width=0.3\textwidth]{data/home-new.png}}
+  \caption{roomsGPT performance}
+\end{figure}
+}
+
+\end{frame}
+% ---------------------------------------------------------------------------------------------------
+
+
+% ===================================================================================================
+\section{Dream Designer}
+% ===================================================================================================
+
+% ---------------------------------------------------------------------------------------------------
+\begin{frame}[plain]
+  \begin{figure}[H]
+    \includegraphics[width=\textwidth, height=0.95\textheight]{data/thank_you.png}
+  \end{figure}
+
+\end{frame}
+% ---------------------------------------------------------------------------------------------------
+
+
+\end{document}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>Halloween</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("back.jpeg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        [class^=swiper-button-] {
+            transition: all 0.3s ease;
+        }
+
+        .swiper-slide {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            margin-bottom: 1px;
+            left: 0px;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 80%;
+            height: 100vh;
+            float: left;
+            transition: opacity 0.6s ease, transform 0.3s ease;
+        }
+
+        .swiper-container.nav-slider {
+            width: 20%;
+            padding-right: 20px;
+            float: left;
+        }
+
+        .swiper-container.nav-slider .swiper-slide {
+            cursor: pointer;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+            opacity: 1;
+        }
+
+        .swiper-container.nav-slider .swiper-slide .content {
+            width: 10%;
+        }
+
+        .swiper-container.nav-slider .swiper-slide .content .title {
+            font-size: 20px;
+        }
+
+        .swiper-container:hover .swiper-button-prev,
+        .swiper-container:hover .swiper-button-next {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .swiper-container.loading {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-slide .slide-bgimg {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            width: 90%;
+            height: 80%;
+            bottom: 20px;
+            background-position: auto;
+            background-size: cover;
+
+        }
+
+        .swiper-slide .entity-img {
+            display: none;
+        }
+
+        .swiper-slide .content {
+            position: absolute;
+            top: 60%;
+            left: 20px;
+            width: 50%;
+            padding-left: 5%;
+            color: #fff;
+        }
+
+        .swiper-slide .content .title {
+            font-size: 2.6em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .swiper-slide .content .caption {
+            display: block;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.4;
+            transform: translateX(50px);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.7s ease;
+        }
+
+        .swiper-slide .content .caption.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        [class^=swiper-button-] {
+            width: 44px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .swiper-button-prev {
+            transform: translateX(50px);
+            left: 70px
+        }
+
+        .swiper-button-next {
+            transform: translateX(-50px);
+            right: 70px;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+</head>
+
+<body translate="no">
+    <div class="bg">
+
+        <div class="swiper-container main-slider loading">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(home.webp)">
+                        <img src="home.webp" class="entity-img" />
+                    </figure>
+                    <div class="content">
+                        <p class="title">Halloween</p>
+                        <span class="caption"> - Trick or treat and spooky fun</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(living.webp)"> <img src="living.webp"
+                            class="entity-img" />
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(living2.webp)"> <img src="living2.webp"
+                            class="entity-img" />
+                    </figure>
+
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(bedroom.webp)"></figure>
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(kitchen.webp)"></figure>
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(bathroom.webp)"></figure>
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(toilet.webp)"></figure>
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(patio.webp)"></figure>
+
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(basement.webp)"></figure>
+
+                </div>
+
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
+
+        <!-- Thumbnail navigation -->
+        <div class="swiper-container nav-slider loading">
+            <div class="swiper-wrapper" role="navigation">
+
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(home.webp)">
+                        <img src="home.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(living.webp)">
+                        <img src="living.webp" ; class="entity-img" />
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(living2.webp)">
+                        <img src="living2.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(bedroom.webp)">
+                        <img src="bedroom.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(kitchen.webp)">
+                        <img src="kitchen.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(bathroom.webp)">
+                        <img src="bathroom.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(toilet.webp)">
+                        <img src="toilet.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(patio.webp)">
+                        <img src="patio.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="slide-bgimg" style="background-image:url(basement.webp)">
+                        <img src="basement.webp" ; class="entity-img" />
+
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+        <script
+            src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js'></script>
+        <script id="rendered-js">
+            // Params
+            let mainSliderSelector = '.main-slider',
+                navSliderSelector = '.nav-slider',
+                interleaveOffset = 0.5;
+
+            // Main Slider
+            let mainSliderOptions = {
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 3000
+                },
+
+                loopAdditionalSlides: 10,
+                grabCursor: true,
+                watchSlidesProgress: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+
+                on: {
+                    init: function () {
+                        this.autoplay.stop();
+                    },
+                    imagesReady: function () {
+                        this.el.classList.remove('loading');
+                        this.autoplay.start();
+                    },
+                    slideChangeTransitionEnd: function () {
+                        let swiper = this,
+                            captions = swiper.el.querySelectorAll('.caption');
+                        for (let i = 0; i < captions.length; ++i) {
+                            if (window.CP.shouldStopExecution(0)) break;
+                            captions[i].classList.remove('show');
+                        } window.CP.exitedLoop(0);
+                        swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
+                    },
+                    progress: function () {
+                        let swiper = this;
+                        for (let i = 0; i < swiper.slides.length; i++) {
+                            if (window.CP.shouldStopExecution(1)) break;
+                            let slideProgress = swiper.slides[i].progress,
+                                innerOffset = swiper.width * interleaveOffset,
+                                innerTranslate = slideProgress * innerOffset;
+
+                            swiper.slides[i].querySelector(".slide-bgimg").style.transform =
+                                "translateX(" + innerTranslate + "px)";
+                        } window.CP.exitedLoop(1);
+                    },
+                    touchStart: function () {
+                        let swiper = this;
+                        for (let i = 0; i < swiper.slides.length; i++) {
+                            if (window.CP.shouldStopExecution(2)) break;
+                            swiper.slides[i].style.transition = "";
+                        } window.CP.exitedLoop(2);
+                    },
+                    setTransition: function (speed) {
+                        let swiper = this;
+                        for (let i = 0; i < swiper.slides.length; i++) {
+                            if (window.CP.shouldStopExecution(3)) break;
+                            swiper.slides[i].style.transition = speed + "ms";
+                            swiper.slides[i].querySelector(".slide-bgimg").style.transition =
+                                speed + "ms";
+                        } window.CP.exitedLoop(3);
+                    }
+                }
+            };
+
+
+            let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+
+            // Navigation Slider
+            let navSliderOptions = {
+                loop: true,
+                loopAdditionalSlides: 10,
+                speed: 1000,
+                spaceBetween: 2,
+                slidesPerView: 5,
+                centeredSlides: false,
+                touchRatio: 0.2,
+                slideToClickedSlide: true,
+                direction: 'vertical',
+                on: {
+                    imagesReady: function () {
+                        this.el.classList.remove('loading');
+                    },
+                    click: function () {
+                        mainSlider.autoplay.stop();
+                    }
+                }
+            };
+
+
+            let navSlider = new Swiper(navSliderSelector, navSliderOptions);
+
+            // Matching sliders
+            mainSlider.controller.control = navSlider;
+            navSlider.controller.control = mainSlider;
+//# sourceURL=pen.js
+        </script>
+
+    </div>
+</body>
+
+</html>

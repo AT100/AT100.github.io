@@ -1,0 +1,305 @@
+% Declare that this style file requires at least LaTeX version 2e.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{talk_style}[2019-01-14 my style file for talks]
+
+\usepackage{appendixnumberbeamer}
+% setup <<<
+
+\usecolortheme{beaver}
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+\setbeamercovered{transparent}
+\def\beamertemplatetransparentcoveredmedium{\setbeamercovered{transparent=7}}
+\beamertemplatetransparentcoveredmedium
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[sections numbered]
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\backupbegin}{
+    \newcounter{finalframe}
+    \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+    \setcounter{framenumber}{\value{finalframe}}
+}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\usepackage{xcolor,colortbl}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{l}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage{siunitx}
+\usepackage{soul}
+    \setul{0.2ex}{}
+\usepackage{multimedia}
+
+% can only use one of the other
+\usepackage{subfigure}
+%\usepackage{subcaption}
+
+\usepackage{color}
+
+\usepackage{graphicx}
+
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{wrapfig}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{latexsym}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{epigraph}
+\usepackage[boxed,ruled,linesnumbered]{algorithm2e}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+
+
+\pgfplotsset{
+    %contour/labels={false},
+    ylabel style={rotate=-90},
+    tick label style={font=\tiny},
+    label style={font=\tiny},
+%    legend style={font=\footnotesize},
+%    legend style={
+%        at={(1.03,0.5)},
+%        anchor=west,
+%        legend columns=1,
+%        cells={anchor=west},
+%        font=\footnotesize,
+%        rounded corners=1pt,
+%    },
+}
+
+%% Define plot style
+\pgfplotsset{State_space_n2/.style={
+        legend cell align=left,
+        scaled ticks=true,
+        width=5cm,
+        height=5cm,
+        xlabel={$a_1$},
+        ylabel={$a_2$},
+        xlabel near ticks,
+        ylabel near ticks,
+        ylabel style={rotate=-90},
+    }
+}
+
+\pgfplotsset{State_space_n4/.style={
+        State_space_n2,
+        xlabel={$a_{i}$},
+        ylabel={$a_{i+1}$},
+        y label style={at={(-0.1,0.5)}}
+    }
+}
+
+\pgfplotsset{Lines_black/.style={
+        mark=none,
+        line join=round,
+        line width=2pt,
+        color=gray,
+    }
+}
+
+\pgfplotsset{Lines_red/.style={
+        mark=none,
+        line join=round,
+        line width=0.5pt,
+        color=red,
+    }
+}
+
+%% Define plot style
+\pgfplotsset{Basic_2D_axis/.style={
+  font=\footnotesize,
+  xmin=0,
+  xmax=1.5,
+  axis on top,
+  ymin=-0.2,
+  ymax=1.2,
+  enlargelimits=false,
+  width=4cm,
+  height=4cm,
+  xlabel={$x$},
+  ylabel={$w$},
+  xtick align=outside,
+  ytick align=outside,
+  xlabel near ticks,
+  ylabel near ticks,
+  }
+}
+
+\pgfplotsset{Basic_2D_axis_wider/.style={
+  Basic_2D_axis,
+  width=7.5cm,
+  height=5cm,
+  }
+}
+
+\pgfplotsset{Burgers_2D_axis/.style={
+  Basic_2D_axis_wider,
+  ymin=0.7,
+  ymax=1.4,
+  }
+}
+
+\pgfplotsset{black_2D_axis/.style={
+  Basic_2D_axis_wider,
+  ylabel={$\lambda$},
+  xmin=280,
+  xmax=477,
+  ymin=-50,
+  ymax=900,
+  }
+}
+
+\pgfplotsset{Contour_axis_style/.style={
+  font=\footnotesize,
+  ybar, xbar,
+  axis on top,
+  enlargelimits=false,
+  width=5cm,
+  height=5cm,
+  xlabel={$t$},
+  ylabel={$x$},
+  y dir=reverse,
+  xlabel near ticks,
+  ylabel near ticks,
+  }
+}
+
+\pgfplotsset{BlackScholes_axis_style1/.style={
+  font=\footnotesize,
+  ybar, xbar,
+  axis on top,
+  enlargelimits=false,
+  width=4.5cm,
+  height=4.5cm,
+  xlabel={$\tau$},
+  ylabel={$\log(u-g)$},
+  %y dir=reverse,
+  xlabel near ticks,
+  ylabel near ticks,
+  }
+}
+
+\pgfplotsset{BlackScholes_axis_style2/.style={
+  font=\footnotesize,
+  ybar, xbar,
+  axis on top,
+  enlargelimits=false,
+  width=4.5cm,
+  height=4.5cm,
+  xlabel={$\tau$},
+  ylabel={$x$},
+  %y dir=reverse,
+  xlabel near ticks,
+  ylabel near ticks,
+  }
+}
+\pgfplotsset{Basic_lines/.style={
+        mark=none,
+    line width = 0.5pt,
+        unbounded coords=jump,
+        line join=round,
+    }
+}
+
+\pgfplotsset{Grey_line/.style={
+        Basic_lines,
+        color=black,
+    }
+}
+
+\pgfplotsset{Grey_thick_line/.style={
+        Basic_lines,
+        line width = 2pt,
+        color=gray,
+    }
+}
+
+\pgfplotsset{Black_line/.style={
+        Basic_lines,
+        color=black,
+    }
+}
+
+\pgfplotsset{Red_line/.style={
+        Basic_lines,
+        color=red,
+        %dashed,
+    }
+}
+
+\pgfplotsset{Dashed_line/.style={
+        Basic_lines,
+        color=blue,
+    dashed,
+    }
+}
+
+
+\def\GLOBAL_SCALE{0.75}
+
+\makeatletter
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% tighter vertical spacing in outline
+\makeatother
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother

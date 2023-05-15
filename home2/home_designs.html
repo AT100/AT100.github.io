@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>Dream Designer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <style>
+        html,
+        body,
+        .stage,
+        .ring,
+        .img {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            user-select: none;
+
+
+        }
+
+        .head {
+            position: relative;
+            color: white;
+            bottom: 80px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-style: italic;
+            width: 100%;
+            text-shadow: 1px 1px 1px #333;
+
+        }
+
+        p {
+            text-indent: 50px;
+        }
+
+        html,
+        body,
+        .stage {
+            overflow: hidden;
+            /* The image used */
+            background-image: url("back.jpeg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        div,
+        svg {
+            position: absolute;
+        }
+
+        .container {
+            perspective: 2000px;
+            width: 300px;
+            height: 400px;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image_wrapper {
+            position: relative;
+        }
+
+        .overlay {
+            text-align: center;
+            position: absolute;
+            top: 455px;
+            left: 0;
+            width: 770px;
+            height: 15%;
+            font-size: 2rem;
+            font-weight: 300;
+            color: white;
+            backdrop-filter: blur(12px) brightness(80%);
+
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+</head>
+
+<body translate="no">
+    <div class="stage">
+
+        <div class="container">
+            <div class="head">
+                <img src="https://www.realtor.com/ai/images/rdc-logo-red.png" alt="realtor.com" width="180" height="25">
+                <img src="dream_designer.png" alt="realtor.com" width="260" height="130">
+                <p>
+
+                <h1>Choose your home style</h1>
+                </p>
+            </div>
+            <div class="ring">
+
+                <div class="img">
+                    <div class="image_wrapper">
+                        <img onclick="window.location.href = 'modern/all.html';" src="modern/home.webp" alt="" />
+                        <div class="overlay">
+                            <h3>Modern</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'halloween/all.html';" src="halloween/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Halloween</h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'black_white/all.html';" src="black_white/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Black & White</h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'cyberpunk/all.html';" src="cyberpunk/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Cyberpunk</h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'french_country/all.html';" src="french_country/home.webp"
+                        alt="" />
+                    <div class="overlay">
+                        <h3>French Country</h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'pastel/all.html';" src="pastel/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Pastel</h3>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'ocean_inspired/all.html';" src="ocean_inspired/home.webp"
+                        alt="" />
+                    <div class="overlay">
+                        <h3>Ocean inspired</h3>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'christmas/all.html';" src="christmas/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Christmas</h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'rustic/all.html';" src="rustic/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Rustic</h3>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <div class="image_wrapper"></div>
+                    <img onclick="window.location.href = 'bohemian/all.html';" src="bohemian/home.webp" alt="" />
+                    <div class="overlay">
+                        <h3>Bohemian</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script
+            src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'></script>
+        <script id="rendered-js">
+            let xPos = 0;
+
+            gsap.timeline().
+                set('.ring', { rotationY: 90, cursor: 'grab' }) //set initial rotationY so the parallax jump happens off screen
+                .set('.img', { // apply transform rotations to each image
+                    rotateY: i => i * 80,
+                    transformOrigin: '50% 50% 1200px',
+                    z: -1000,
+                    backgroundImage: i => 'url(https://picsum.photos/id/' + (i + 32) + '/600/400/)',
+                    backgroundPosition: i => getBgPos(i),
+                    backfaceVisibility: 'hidden'
+                }).
+
+                from('.img', {
+                    duration: 1.5,
+                    y: 200,
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: 'expo'
+                }).
+
+                add(() => {
+                    $('.img').on('mouseenter', e => {
+                        let current = e.currentTarget;
+                        gsap.to('.img', { opacity: (i, t) => t == current ? 1 : 0.5, ease: 'power3' });
+                    });
+                    $('.img').on('mouseleave', e => {
+                        gsap.to('.img', { opacity: 1, ease: 'power2.inOut' });
+                    });
+                }, '-=0.5');
+
+            $(window).on('mousedown touchstart', dragStart);
+            $(window).on('mouseup touchend', dragEnd);
+
+
+            function dragStart(e) {
+                if (e.touches) e.clientX = e.touches[0].clientX;
+                xPos = Math.round(e.clientX);
+                gsap.set('.ring', { cursor: 'grabbing' });
+                $(window).on('mousemove touchmove', drag);
+            }
+
+
+            function drag(e) {
+                if (e.touches) e.clientX = e.touches[0].clientX;
+
+                gsap.to('.ring', {
+                    rotationY: '-=' + (Math.round(e.clientX) - xPos) % 360,
+                    onUpdate: () => { gsap.set('.img', { backgroundPosition: i => getBgPos(i) }); }
+                });
+
+
+                xPos = Math.round(e.clientX);
+            }
+
+
+            function dragEnd(e) {
+                $(window).off('mousemove touchmove', drag);
+                gsap.set('.ring', { cursor: 'grab' });
+            }
+
+
+            function getBgPos(i) {//returns the background-position string to create parallax movement in each image
+                return 100 - gsap.utils.wrap(0, 360, gsap.getProperty('.ring', 'rotationY') - 180 - i * 80) / 360 * 500 + 'px 0px';
+            }
+//# sourceURL=pen.js
+        </script>
+    </div>
+    </div>
+</body>
+
+</html>
